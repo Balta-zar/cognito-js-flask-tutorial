@@ -18,5 +18,10 @@ def welcome():
     return render_template('welcome.html')
 
 
+@app.route("/api/protected_api", methods=["POST"])
+def protected_api():
+    return 'some protected data from api'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
