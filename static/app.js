@@ -106,13 +106,15 @@ function setWelcome () {
                 alert(err);
                 return;
             }
+            console.log(cognitoUser.signInUserSession.accessToken.jwtToken);
             $('#username').html(cognitoUser.username);
         });
     }
 
     var url = "/api/protected_api";
 
-    $.post(url, {})
+    $.post(url, {'access_token':
+        cognitoUser.signInUserSession.accessToken.jwtToken})
     .done(function (data) {
         $('#data_from_protected_api').html(data);
     });
