@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <form>
+                <form onsubmit="return false;">
                     <div class="form-group">
                         <div>Username</div>
                         <input id="code_username" type="text"
@@ -35,6 +35,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',
+            filename='aws-cognito-sdk.min.js') }}"></script>
+    <script src="{{ url_for('static',
+            filename='amazon-cognito-identity.min.js') }}"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

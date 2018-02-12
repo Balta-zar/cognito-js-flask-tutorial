@@ -14,7 +14,7 @@
             </div>
             <div class="col-sm-4">
                 <div>
-                    <form>
+                    <form onsubmit="return false;">
                         <div class="form-group">
                             <div>Username</div>
                             <input id="sign_in_username"
@@ -34,7 +34,7 @@
                     </form>
                 </div>
                 <div>
-                    <form>
+                    <form onsubmit="return false;">
                         <div class="form-group">
                             <div>Username</div>
                             <input id="registration_username"
@@ -65,6 +65,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',
+            filename='aws-cognito-sdk.min.js') }}"></script>
+    <script src="{{ url_for('static',
+            filename='amazon-cognito-identity.min.js') }}"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

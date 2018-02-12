@@ -18,6 +18,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',
+            filename='aws-cognito-sdk.min.js') }}"></script>
+    <script src="{{ url_for('static',
+            filename='amazon-cognito-identity.min.js') }}"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
     <script>
         $(window).ready(setWelcome);
