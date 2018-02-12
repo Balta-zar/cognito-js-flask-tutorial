@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form>
+                    <div class="form-group">
+                        <div>Username</div>
+                        <input id="code_username" type="text"
+                            class="form-control" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <div>Code</div>
+                        <input id="code_code" type="text"
+                            class="form-control" placeholder="Code">
+                    </div>
+                    <button type="submit"
+                        class="btn btn-primary btn-block"
+                        onclick="validate()">
+                        Validate
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

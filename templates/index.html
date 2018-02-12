@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>some content</h2>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <div>Username</div>
+                            <input id="sign_in_username"
+                                type="text" class="form-control"
+                                placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <div>Password</div>
+                            <input id="sign_in_password"
+                                type="password" class="form-control"
+                                placeholder="Enter password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block"
+                                onclick="signIn();">
+                            Sign in
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <div>Username</div>
+                            <input id="registration_username"
+                                type="text" class="form-control"
+                                placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <div>Email address</div>
+                            <input id="registration_email"
+                                type="text" class="form-control"
+                                placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <div>Password</div>
+                            <input id="registration_password"
+                                type="password" class="form-control"
+                                placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block"
+                                onclick="register();">
+                            Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
