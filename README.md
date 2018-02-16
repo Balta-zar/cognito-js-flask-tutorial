@@ -1,15 +1,13 @@
 # cognito-js-flask-tutorial
 
 #### Video tutorial
-pt1: https://www.youtube.com/watch?v=qMtk4LJ5OfE <br/>
-pt2: https://www.youtube.com/watch?v=A3aoVQlklGI <br/>
-pt3: https://www.youtube.com/watch?v=cze7ndxouBI <br/>
+https://www.youtube.com/watch?v=qMtk4LJ5OfE&list=PL7_Pg81ReB0yiKe1MHln4uxZ6GHv8W5uk <br/>
 <br/>
 #### Install dependencies
 Python: <br/>
 pip install -r requirements.txt
 <br/><br/>
-Node:
+Node: <br/>
 cd pem/ <br/>
 npm install
 #### Start project
