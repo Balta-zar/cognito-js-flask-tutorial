@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=qMtk4LJ5OfE&list=PL7_Pg81ReB0yiKe1MHln4uxZ6GHv8W
 Python: <br/>
 pip install -r requirements.txt
 <br/><br/>
-Node: <br/>
+Node.js: <br/>
 cd pem/ <br/>
 npm install
 #### Start project
