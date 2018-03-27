@@ -6,8 +6,20 @@ app = Flask(__name__)
 
 jwt.register_algorithm('RS256', RSAAlgorithm(RSAAlgorithm.SHA256))
 
+
 def is_token_valid(token):
-    pem = '-----BEGIN RSA PUBLIC KEY-----\nMIIBCgKCAQEAk1dH4Dyl4o3asYqguy+A+1/bXuPGnMXbj41H9zVTcmTCznW2ajjh\nl7+sBAJWnxsd+z43SlPzQ/EiOd144G37w84xln6VMPsjMgRf0Pwlo9rEsmhTS3ly\npR8eOMrQRN65qqo7z2+xtYwzfb+4F49QTFG18ggFMnbmrCE9LWLEyxIQ7kYwYOw9\nPpVooeSAlD4wXYdYI4pGvqCRtYfVfRbQT5GEmwLALTUvhGMhKZHVlwD4nlSo3kNA\n7VMzfOAAKyiB+lNKFBopL1qwQWC61xPfxNt3O+cSrq4lOBUHHnhNHz7OfVyXj6xx\nBRJziO4Zo9Ve7nxEcRpzK/mlkx7jSdHDNwIDAQAB\n-----END RSA PUBLIC KEY-----\n'
+    pems_dict = {
+        'kid1': 'pem1',
+        'kid2': 'pem2'
+    }
+
+    kid = jwt.get_unverified_header(token)['kid']
+    pem = pems_dict.get(kid, None)
+
+    if pem is None:
+        print 'kid false'
+        return False
+
     try:
         decoded_token = jwt.decode(token, pem, algorithms=['RS256'])
         iss = 'https://cognito-idp.us-east-2.amazonaws.com/us-east-2_I1ZQrSsWb'
@@ -16,10 +28,6 @@ def is_token_valid(token):
             return False
         elif decoded_token['token_use'] != 'access':
             print 'access false'
-            return False
-        kid = 'kuyzfrEKql8/C5riRiesrSu1DmCIwtbyW8E5rxNBoDo='
-        if jwt.get_unverified_header(token)['kid'] != kid:
-            print 'kid false'
             return False
         return True
     except Exception:
